@@ -9,9 +9,9 @@ function App() {
   const addValue = () => {
     if (counter < 20) {
       setMessage(' ')
-      setCounter(counter + 1)// here we can't pass counter++. It will create a problem  in the next render cycle.
+      setCounter(counter + 1) // here we can't pass counter++. It will create a problem  in the next render cycle.
     } else {
-      message = `You can't  add more than 20!`
+      message = `You can't  add more than : `
       setMessage(message)
     }
   }
@@ -21,7 +21,7 @@ function App() {
       setMessage(' ')
       setCounter(counter - 1) // here we can't pass counter--. It will create a problem  in the next render cycle.
     } else {
-      message = `You can't go beyond 0`
+      message = `You can't go beyond : `
       setMessage(message)
     }
   }
@@ -31,8 +31,7 @@ function App() {
       <h2>Counter value: {counter}</h2>
       <button onClick={addValue}>Add value {counter}</button>
       <button onClick={removeValue}>remove value {counter}</button>
-      <p>{counter}</p>
-      <p>{message}</p>
+      <p>{message}{counter}</p>
     </>
   )
 }
